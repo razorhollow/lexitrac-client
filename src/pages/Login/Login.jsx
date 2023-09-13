@@ -5,8 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
 // services
 import * as authService from '../../services/authService'
 
-// css
-import styles from './Login.module.css'
 
 const LoginPage = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
