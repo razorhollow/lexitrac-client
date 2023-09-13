@@ -9,7 +9,7 @@ const Landing = ({ user }) => {
   return (
     <main>
       <Lottie animationData={logo} loop={true} style={{height: "300px"}}/>
-      <h1>hello, {user ? user.name : 'friend'}</h1>
+      <h1>LexiTrac</h1>
     </main>
   )
 }
