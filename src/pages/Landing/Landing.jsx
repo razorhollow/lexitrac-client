@@ -6,6 +6,7 @@ import Lottie from 'lottie-react'
 import logo from '../../assets/legal-document.json'
 import { Button, Input, FormGroup } from '../../components/lib'
 import {Modal, ModalContents, ModalOpenButton} from '../../components/modal'
+import LoginPage from '../Login/Login'
 
 function LoginForm({onSubmit, submitButton}) {
   function handleSubmit(event) {
@@ -72,7 +73,9 @@ const Landing = ({ user }) => {
           gridGap: '0.75rem',
         }}
       >
-        <Modal>
+        <Modal
+          css={{zIndex: 9999}}
+        >
           <ModalOpenButton>
             <Button variant="primary">Login</Button>
           </ModalOpenButton>

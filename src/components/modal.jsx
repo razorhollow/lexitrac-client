@@ -36,7 +36,21 @@ function ModalOpenButton({children: child}) {
 function ModalContentsBase(props) {
   const [isOpen, setIsOpen] = React.useContext(ModalContext)
   return (
-    <Dialog isOpen={isOpen} onDismiss={() => setIsOpen(false)} {...props} />
+    <Dialog 
+      isOpen={isOpen} 
+      onDismiss={() => setIsOpen(false)} 
+      css={{
+        padding: '3rem',
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -100%)',
+        zIndex: 9999,
+        width: '100%',
+        backgroundColor: 'rgba(1, 1, 1, 0.85)',
+      }}
+      {...props} 
+    />
   )
 }
 

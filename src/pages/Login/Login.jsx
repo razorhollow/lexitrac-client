@@ -42,11 +42,11 @@ const LoginPage = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main className={styles.container}>
+    <main>
       <h1>Log In</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
+      <p>{message}</p>
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <label>
           Email
           <input
             type="text"
@@ -55,7 +55,7 @@ const LoginPage = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
-        <label className={styles.label}>
+        <label>
           Password
           <input
             type="password"
@@ -66,7 +66,7 @@ const LoginPage = ({ handleAuthEvt }) => {
         </label>
         <div>
           <Link to="/">Cancel</Link>
-          <button className={styles.button} disabled={isFormInvalid()}>
+          <button disabled={isFormInvalid()}>
             Log In
           </button>
         </div>
