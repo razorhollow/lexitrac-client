@@ -35,7 +35,7 @@ function LoginForm({ submitButton, handleAuthEvt }) {
       }
       await authService.login(formData)
       handleAuthEvt()
-      navigate('/')
+      navigate('/profiles')
     } catch (err) {
       console.log(err)
       setMessage(err.message)
@@ -47,10 +47,6 @@ function LoginForm({ submitButton, handleAuthEvt }) {
   const isFormInvalid = () => {
     return !(email && password)
   }  
-
-  React.useEffect(() => {
-    console.log(formData)
-  })
   
   return (
     <form
@@ -81,7 +77,7 @@ function LoginForm({ submitButton, handleAuthEvt }) {
   }
 
 
-const Landing = ({ user }) => {
+const Landing = ({ user, handleAuthEvt }) => {
   const login = (formData) => {
     console.log('login', formData)
   }
@@ -107,14 +103,13 @@ const Landing = ({ user }) => {
           gridGap: '0.75rem',
         }}
       >
-        <Modal
-          css={{zIndex: 9999}}
-        >
+        <Modal>
           <ModalOpenButton>
             <Button variant="primary">Login</Button>
           </ModalOpenButton>
           <ModalContents aria-label="Login form" title="Login">
             <LoginForm
+            handleAuthEvt={handleAuthEvt}
               onSubmit={login}
               submitButton={<Button variant="primary">Login</Button>}
             />
