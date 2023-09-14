@@ -12,6 +12,8 @@ module.exports = {
   rules: {
     'react-refresh/only-export-components': 'warn',
     'react/prop-types': 'off',
-    'react/no-unescaped-entities': 'off'
+    'react/no-unescaped-entities': 'off',
+    "react/no-unknown-property": ["error", { ignore: ["jsx"] }],
+    "react/no-unknown-property": ['error', { ignore: ['css'] }],
   },
 }
